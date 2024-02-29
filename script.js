@@ -1,7 +1,7 @@
 let boxes = document.querySelectorAll(".box");
 let reset = document.querySelector(".reset");
-let turnX = true;
-let msgdisplay = document.querySelector(".msgdisplay");
+let turnX = true;                                                    
+let msgdisplay = document.querySelector(".msgdisplay");     
 let track = 0;
 let isdraw = true;
 
@@ -12,12 +12,14 @@ const winningpattern = [
   [0, 1, 2],
   [3, 4, 5],
   [6, 7, 8],
-  [0, 3, 6],         //all the possible combinations of winning
+  [0, 3, 6],                                                         
   [1, 4, 7],
   [2, 5, 8],
   [0, 4, 8],
   [2, 4, 6],
 ];
+
+
 
 const draw = () => {
   if (track === 9) {
@@ -37,6 +39,9 @@ const draw = () => {
     }
   }
 }
+
+
+
 const winnerofgame = (winner12) => {
   msgdisplay.innerHTML = "The Winner Is Player " + winner12;
   msgdisplay.classList.remove("hide");
@@ -44,6 +49,9 @@ const winnerofgame = (winner12) => {
     box.disabled = true;
   }
 }
+
+
+
 const enable = () => {
   for (box of boxes) {
     box.disabled = false;
@@ -53,6 +61,9 @@ const enable = () => {
     track = 0;
   }
 }
+
+
+
 const winner = () => {
   for (let position of winningpattern) {
     const pos1 = boxes[position[0]].innerHTML;
@@ -67,7 +78,11 @@ const winner = () => {
   }
 }
 
+
+
 reset.addEventListener("click", enable);
+
+
 
 boxes.forEach((box) => {
   box.addEventListener("click", () => {
